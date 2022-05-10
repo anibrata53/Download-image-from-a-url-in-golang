@@ -10,7 +10,7 @@ import (
 	"golang.org/x/net/html"
 )
 
-func FindImages1(url string) string {
+func FindImages(url string) string {
 	result := make([]string, 0)
 	resp, err := http.Get(url)
 	// handle the error if there is one

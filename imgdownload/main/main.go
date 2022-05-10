@@ -9,7 +9,7 @@ import (
 func main() {
 	url := "https://golang.org"
 	fmt.Println("Processing...")
-	message := controllers.FindImages1(url)
+	message := controllers.FindImages(url)
 	fmt.Println(message)
 
 }
