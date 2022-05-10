@@ -10,7 +10,7 @@ import (
 	"golang.org/x/net/html"
 )
 
-func FindImages1(url string) string { //[]string
+func FindImages1(url string) string {
 	result := make([]string, 0)
 	resp, err := http.Get(url)
 	// handle the error if there is one
@@ -25,8 +25,6 @@ func FindImages1(url string) string { //[]string
 		log.Fatal(err)
 	}
 	new_html := string(html1) // convert slice of bytes to string
-
-	//fmt.Printf("%s\n", new_html)
 
 	//parsing
 	doc, err := html.Parse(strings.NewReader(new_html))
@@ -49,13 +47,10 @@ func FindImages1(url string) string { //[]string
 		}
 	}
 	f(doc)
-	//fmt.Println(result)
+
 	images := result
-	//we pass the image urls to DownloadImages1 which is used to
-	//concurrently download all images with valid urls
-	//and returns a completion message after the images
-	//have been successfully downloaded
-	message := DownloadImages1(images)
+
+	message := DownloadImages(images)
 	return message
 
 }

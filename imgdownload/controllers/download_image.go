@@ -13,7 +13,7 @@ import (
 
 var wg sync.WaitGroup
 
-func DownloadImages1(images []string) string {
+func DownloadImages(images []string) string {
 
 	wg.Add(len(images))
 
